@@ -1,7 +1,7 @@
 <template>
   <a-row class="login">
     <a-col :span="8" :offset="8" class="login-main">
-      <h1 style="text-align: center"><rocket-two-tone />&nbsp;12306售票系统</h1>
+      <h1 style="text-align: center"><rocket-two-tone />&nbsp;甲蛙12306售票系统</h1>
       <a-form
           :model="loginForm"
           name="basic"
@@ -58,7 +58,6 @@ export default defineComponent({
       axios.post("/member/member/send-code", {
         mobile: loginForm.mobile
       }).then(response => {
-        //console.log(response);
         let data = response.data;
         if (data.success) {
           notification.success({ description: '发送验证码成功！' });
@@ -75,7 +74,7 @@ export default defineComponent({
         if (data.success) {
           notification.success({ description: '登录成功！' });
           // 登录成功，跳到控台主页
-          router.push("/");
+          router.push("/welcome");
           store.commit("setMember", data.content);
         } else {
           notification.error({ description: data.message });
