@@ -13,6 +13,7 @@
            :pagination="pagination"
            @change="handleTableChange"
            :loading="loading">
+    // eslint-disable-next-line
     <template #bodyCell="{ column, record }">
       <template v-if="column.dataIndex === 'operation'">
       </template>
