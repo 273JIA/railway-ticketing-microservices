@@ -32,7 +32,8 @@ public class DailyTrainJob implements Job {
         Date date = new Date();
         DateTime dateTime = DateUtil.offsetDay(date, 15);
         Date offsetDate = dateTime.toJdkDate();
-        CommonResp<Object> commonResp = businessFeign.genDaily(offsetDate);
-        LOG.info("生成15天后的车次数据结束，结果：{}", commonResp);
+        //CommonResp<Object> commonResp = businessFeign.genDaily(offsetDate);
+        LOG.info("生成15天后的车次数据结束");
+        //LOG.info("生成15天后的车次数据结束，结果：{}", commonResp);
     }
 }
